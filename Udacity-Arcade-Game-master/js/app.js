@@ -3,7 +3,10 @@ let score = 0;
 $("#playerScore").html(`${score}`);
 
 // Enemies our player must avoid
-let Enemy = function(x, y) {
+class Enemy  {
+    constructor(x, y){
+        
+    
     // Variables applied to each of our instances go here,
     // we've provided one for you to get started
 
@@ -12,11 +15,8 @@ let Enemy = function(x, y) {
     this.sprite = 'images/enemy-bug.png';
     this.x = x;
     this.y = y;
-};
-
-// Update the enemy's position, required method for game
-// Parameter: dt, a time delta between ticks
-Enemy.prototype.update = function(dt) {
+    } //end of constructor 
+    update(dt) {
     // You should multiply any movement by the dt parameter
     // which will ensure the game runs at the same speed for
     // all computers.
@@ -33,6 +33,12 @@ Enemy.prototype.update = function(dt) {
 		player.reset();
     }
 };
+    
+};
+
+// Update the enemy's position, required method for game
+// Parameter: dt, a time delta between ticks
+
 
 // Draw the enemy on the screen, required method for game
 Enemy.prototype.render = function() {
@@ -67,16 +73,16 @@ Player.prototype.render = function() {
 
 Player.prototype.handleInput = function(direction) {
     if(direction == 'left' && this.x > 0) {
-        this.x -= 50;
+        this.x -= 100;
     }
     if(direction == 'right' && this.x < 400) {
-        this.x += 50;
+        this.x += 100;
     }
     if(direction == 'up' && this.y > 3) {
-        this.y -= 50;
+        this.y -= 100;
     }
     if(direction == 'down' && this.y < 400) {
-        this.y += 50;
+        this.y += 100;
     }
 };
 
