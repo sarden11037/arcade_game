@@ -5,15 +5,17 @@ let minusX = 0;
 
 // Enemies class with appropriate functions
 class Enemy {
-    constructor(x, y) {
+    constructor(x, y,speed) {
             this.sprite = 'images/enemy-bug.png';
             this.x = x;
             this.y = y;
+            this.speed = speed;
         } //end of constructor 
-    update(dt) {
+    update(dt,speed) {
         //update function for position of enemy
+        
         if (this.x < 505) {
-            this.x += (150 * dt);
+            this.x += (this.speed * dt);
         } else {
             this.x = -90;
         }
@@ -32,12 +34,6 @@ class Enemy {
     }; // end of draw enmy function
 
 };
-
-
-
-
-
-
 //player class with fixed constructor
 class Player {
     constructor(x, y) {
@@ -84,15 +80,19 @@ class Player {
 
 // array for random start positions
 let minX = [];
+let speedX = [];
 for (let i = 0; i <= 5; i++) {
     minX[i] = Math.floor(Math.random() * (-90 - -890 + 1)) + -90;
 }
-let enemy1 = new Enemy(minX[0], 60);
-let enemy2 = new Enemy(minX[1], 140);
-let enemy3 = new Enemy(minX[2], 230);
-let enemy4 = new Enemy(minX[3], 140);
-let enemy5 = new Enemy(minX[4], 60);
-let enemy6 = new Enemy(minX[5], 230);
+for (let i = 0; i <= 5; i++) {
+    speedX[i] = Math.floor(Math.random() * (150 - -800 + 1)) + 150;
+}
+let enemy1 = new Enemy(minX[0], 60,speedX[0]);
+let enemy2 = new Enemy(minX[1], 140,speedX[1]);
+let enemy3 = new Enemy(minX[2], 230,speedX[2]);
+let enemy4 = new Enemy(minX[3], 140,speedX[3]);
+let enemy5 = new Enemy(minX[4], 60,speedX[4]);
+let enemy6 = new Enemy(minX[5], 230,speedX[5]);
 
 
 
