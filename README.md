@@ -9,4 +9,4 @@
 # Each time the player reaches the water, the score goes up by one. If a player collides with an enemy, the score resets. 
 
 <h1> Gameplay</h1>
-<img src="https://imgur.com/a/7f9aA">
+<img src="http://g.recordit.co/8MPH9musGY.gif">
