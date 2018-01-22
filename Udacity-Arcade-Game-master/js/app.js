@@ -42,7 +42,7 @@ class Player {
         this.y = 320;
     }
     update() {
-        if (player.y < 20) {
+        if (this.y < 20) {
             //if player wins, score will be updated
             score++;
             $("#playerScore").html(`${score}`);
@@ -56,16 +56,16 @@ class Player {
     //input function
     handleInput(direction) {
         if (direction == 'left' && this.x > 0) {
-            this.x -= 100;
+            this.x -= 101;
         }
         if (direction == 'right' && this.x < 400) {
-            this.x += 100;
+            this.x += 101;
         }
         if (direction == 'up' && this.y > 3) {
-            this.y -= 100;
+            this.y -= 83;
         }
         if (direction == 'down' && this.y < 400) {
-            this.y += 100;
+            this.y += 83;
         }
     }; //end-of input function
     //reset after win/loss
